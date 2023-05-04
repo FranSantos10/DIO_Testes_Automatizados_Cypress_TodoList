@@ -50,6 +50,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
+   // setTimeout(() => {},5000);
     this.displayTodoList();
   }
 

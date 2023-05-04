@@ -1,7 +1,7 @@
-describe('App initialization', () => {
-  it('Displays todos from API on load', () => {
-    cy.seedAndVisit();
-
-    cy.get('.task-wrapper').should('have.length', 4);
-  });
-});
+describe('Inicialização do app', () =>{
+    it('Exibe todos o from da API ao carregar', () =>{
+        cy.seedAndVisit();
+        
+        cy.get('.task-wrapper').should('have.length',4);
+    })
+})
