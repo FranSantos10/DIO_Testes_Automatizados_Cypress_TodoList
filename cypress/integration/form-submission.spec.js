@@ -15,8 +15,32 @@ describe('Form submit', () => {
 
         cy.wait('@save')
         cy.wait('@second-load')
-        
+
         //compara o tamanho das tasks
         cy.get('.task-wrapper').should('have.length',5);
-    })
+
+    });
+
+    it('Mostra mensagem de falha ao enviar o item', ()=> {
+        
+         cy.server()
+         cy.route({
+             method: 'POST', 
+             url: '/ToDoModels', 
+             status: 500, 
+             response: {} 
+            }).as('save')
+         
+         cy.seedAndVisit();
+
+         cy.get('#title').type('Buy pizza').type('{enter}')
+         cy.wait('@save')
+
+         cy.on('window:alert', text =>{
+            expect(text).toBe.contains('500')
+         })
+         
+         cy.get('.task-wrapper').should('have.length',4);
+ 
+    });
 })
