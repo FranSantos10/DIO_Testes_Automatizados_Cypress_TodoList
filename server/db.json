@@ -12,12 +12,7 @@
     },
     {
       "id": 3,
-      "title": "Other thing",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "Okay",
+      "title": "other",
       "completed": false
     }
   ]
