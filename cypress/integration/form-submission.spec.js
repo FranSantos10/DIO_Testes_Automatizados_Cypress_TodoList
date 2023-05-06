@@ -1,7 +1,7 @@
 describe('Form submit', () => {
     it('Adicionar um novo item', () => {
         //novo item
-        const newTodo = {id: 10, title: 'Buy pizza', completed:false}
+        const newTodo = {id: 10, title: 'teste', completed:false}
         cy.server()
         cy.route({
             method: 'POST', url: '/ToDoModels', response: newTodo }).as('save')

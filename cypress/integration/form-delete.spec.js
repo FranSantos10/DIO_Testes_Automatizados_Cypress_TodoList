@@ -7,7 +7,7 @@ describe('form-delete', () => {
     it('Deletar um item', () => {
       const valor = 'teste';
   
-      // Verifica se o item existe
+      // Criar o teste antes >> Verifica se o item existe
       cy.get(`.title:contains(${valor})`).should('have.text', valor);
   
       // Clica no botão "Delete" do primeiro item
